@@ -1,11 +1,15 @@
 // my first program in c++
 #include <iostream>
+#include <stdint.h>
 using namespace std;
 
-int solution(string &S);
+uint8_t solution(string &S);
 
-int main()
+int main(void)
 {
+	/** Here we declare the string, although
+	 *  This could also be an input from the user.
+	 */
 	string str = "laskjflkGkslGa0fa1adHj5";
     
     solution(str);
@@ -14,12 +18,12 @@ int main()
 }
 
 
-int solution(string &S) 
+uint8_t solution(string &S) 
 {
     // write your code in C++14 (g++ 6.2.0)
-	int n = 0;
-	int current_max_subset = 0;
-	int largest_max_subset_found = 0;
+	static uint16_t n = 0;
+	static uint16_t current_max_subset = 0;
+	static uint16_t largest_max_subset_found = 0;
 	bool uppercase_in_subset = false;
     
     while(S.length() >= n)
